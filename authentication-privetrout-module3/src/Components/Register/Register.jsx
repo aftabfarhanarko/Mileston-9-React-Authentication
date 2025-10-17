@@ -1,20 +1,25 @@
 import React, { use } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../../context/MyContext/MyContext";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { contextuse } = use(AuthContext);
 
   const handelSubmite = (e) => {
     e.preventDefault();
+
     const email = e.target.email.value;
     const password = e.target.password.value;
+
     contextuse(email, password)
       .then((result) => {
         console.log(result.user);
+        toast.success("Succesfylly User Register");
       })
       .catch((err) => {
         console.log(err.message);
+        toast.error("User Are Not Register Please Register");
       });
   };
 

@@ -10,6 +10,8 @@ import ContextProvider from "./context/ContextProvider/ContextProvider.jsx";
 import Producat from "./Components/Producat/Producat.jsx";
 import Order from "./Components/Producat/Order.jsx";
 import PrivetRouter from "./Components/PrivetRouter/PrivetRouter.jsx";
+import Stors from "./Components/Stors.jsx";
+import MySQl from "./Components/MySQl.jsx";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,18 @@ const router = createBrowserRouter([
         path: "/bord",
         element:<PrivetRouter>
           <Order></Order>
+        </PrivetRouter>
+      },
+      {
+        path: "/store",
+        element:<PrivetRouter>
+          <Stors></Stors>
+        </PrivetRouter>
+      },
+      {
+        path: "/sql",
+        element:<PrivetRouter>
+          <MySQl></MySQl>
         </PrivetRouter>
       },
     ],

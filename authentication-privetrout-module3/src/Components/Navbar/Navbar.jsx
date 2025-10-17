@@ -25,8 +25,13 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/loging" className="mr-4">
-          Bord
+        <NavLink to="/store" className="mr-4">
+          Store
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/sql" className="mr-4">
+          SQl
         </NavLink>
       </li>
       {usersa && (

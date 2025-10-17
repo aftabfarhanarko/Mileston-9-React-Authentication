@@ -1,18 +1,24 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../context/MyContext/MyContext";
 
 const Loging = () => {
-  const {signINUser} = use(AuthContext);
+  const {userLoging} = use(AuthContext);
+  const locations = useLocation();
+  console.log(locations);
+  const neavegit = useNavigate();
 
    const handelLoging = (e) => {
     e.preventDefault();
-    const emaisal = e.target.email.value;
-    const passwords = e.target.password.value;
-    signINUser(emaisal, passwords)
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email,password)
+
+    userLoging(email, password)
      .then((result) => {
         console.log(result.user);
-        // e.target.reset()
+        neavegit(locations.state || "/")
+
       })
       .catch((err) => {
         console.log(err.message);
