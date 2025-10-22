@@ -13,6 +13,7 @@ import PasswordReset from "../Components/PasswordReset";
 export const router = createBrowserRouter([
   {
     path: "/",
+    loader: () => fetch("/news.json") ,
     element: <Homelayout></Homelayout>,
     children: [
       {
@@ -49,10 +50,10 @@ export const router = createBrowserRouter([
     </PrivetRoute>,
     hydrateFallbackElement:<Loding></Loding>
   },
-  {
-    path:"/reset",
-    element: <PasswordReset></PasswordReset>
-  },
+  // {
+  //   path:"/reset",
+  //   element: <PasswordReset></PasswordReset>
+  // },
   {
     path: "/*",
     element: <h2>This Page Not Found 404</h2>,

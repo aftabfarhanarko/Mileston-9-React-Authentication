@@ -23,11 +23,9 @@ const CaterogyNews = () => {
   }, [data, id]);
 
  
-  // const findes = storsNews.map((onew) => onew.title);
 
   return (
     <>
-      {/* <LetasNews storsNews={storsNews} /> */}
       <div>
         <h1 className="mb-9 font-semibold text-lg">
           Total <span className="text-red-600">{storsNews.length}</span> News

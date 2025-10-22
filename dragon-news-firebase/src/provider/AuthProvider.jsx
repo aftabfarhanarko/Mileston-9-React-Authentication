@@ -12,6 +12,7 @@ import {
   setPersistence,
   browserLocalPersistence,
   browserSessionPersistence,
+  sendEmailVerification,
 } from "firebase/auth";
 import { auth } from "../firebase/fierbase";
 
@@ -59,6 +60,9 @@ const AuthProvider = ({ children }) => {
   const ubdeatUserProfile = (profile) => {
     return updateProfile(auth.currentUser, profile);
   };
+  const passwordResetemailUser = () =>{
+    return sendEmailVerification(auth.currentUser);
+  }
 
   // ✅ Track current user state
   useEffect(() => {
@@ -83,6 +87,7 @@ const AuthProvider = ({ children }) => {
     setUser,
     googleLoging,
     githubLoging,
+    passwordResetemailUser
   };
 
   return (

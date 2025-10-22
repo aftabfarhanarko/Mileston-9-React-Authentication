@@ -11,7 +11,7 @@ const MySwal = withReactContent(Swal);
 const Login = () => {
   const [show, setShow] = useState(false);
   const [error, setError] = useState("");
-  const { loginUser } = useContext(AuthContext);
+  const { loginUser,passwordResetemailUser } = useContext(AuthContext);
   const locations = useLocation();
   const navigate = useNavigate();
 
@@ -35,6 +35,15 @@ const Login = () => {
         });
       });
   };
+  const resetPawwordMile =() =>{
+    passwordResetemailUser()
+    .then(result => {
+      console.log(result.user)
+      toast.success("Successfully Reset Password Mail Provied")
+    }).catch(errr => {
+      toast.error(errr.message);
+    })
+  }
 
   return (
     <div className="flex justify-center items-center min-h-screen">
@@ -78,9 +87,9 @@ const Login = () => {
 
               {/* Forgot password */}
               <div>
-                <Link to="/reset" className="link link-hover">
+                <button onClick={resetPawwordMile} className="link link-hover">
                   Forgot password?
-                </Link>
+                </button>
               </div>
 
               {/* Error */}

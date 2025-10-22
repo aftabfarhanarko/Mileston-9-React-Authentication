@@ -28,7 +28,7 @@ const Homelayout = () => {
           {state == "loading" ? <Loding></Loding> :   <Outlet></Outlet> }
         
         </section>
-       <aside className="col-span-2  sticky top-0 h-fit">
+       <aside className="col-span-2  sticky top-0 h-fit hidden md:block">
         <RightAside></RightAside>
        </aside>
       </main>
